@@ -47,12 +47,14 @@
         <div class="pagination">
             {% if paginator.previous_page %}
             <a href="/index.html" class="previous"><i class="fa fa-angle-double-left"></i></a>
-            <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="previous"><i class="fa fa-angle-left"></i></a> {% else %}
+            <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="previous"><i
+          class="fa fa-angle-left"></i></a> {% else %}
             <span class="previous disable"><i class="fa fa-angle-double-left"></i></span>
             <span class="previous disable"><i class="fa fa-angle-left"></i></span> {% endif %}
             <span class="page_number ">{{ paginator.page }}/{{ paginator.total_pages }}</span> {% if paginator.next_page %}
             <a href="{{ paginator.next_page_path }}" class="next"><i class="fa fa-angle-right"></i></a>
-            <a href="{{ site.baseurl }}/page{{ paginator.total_pages }}" class="next"><i class="fa fa-angle-double-right"></i></a> {% else %}
+            <a href="{{ site.baseurl }}/page{{ paginator.total_pages }}" class="next"><i
+          class="fa fa-angle-double-right"></i></a> {% else %}
             <span class="next disable"><i class="fa fa-angle-right"></i></span>
             <span class="next disable"><i class="fa fa-angle-double-right"></i></span> {% endif %}
         </div>
@@ -81,8 +83,8 @@
                     <li>
                         <a href="{{ root_url }}/{{ site.category_dir }}#{{ category | first }}" class="categories-list-item" cate="{{ category | first }}">
                             <span class="name">
-                                {{ category | first }}
-                            </span>
+                {{ category | first }}
+              </span>
                             <span class="badge">{{ category | last | size }}</span>
                         </a>
                     </li>
@@ -99,10 +101,12 @@
                     < min %} {% assign min=t ag[1].size %} {% endif %} {% endfor %} {% if max==m in %} {% assign diff=1 %} {% else %} {% assign diff=m ax | minus: min %} {% endif %} {% for tag in site.tags %} {% assign temp=t ag[1].size | minus: min | times: 36 | divided_by:
                         diff %} {% assign base=t emp | divided_by: 4 %} {% assign remain=t emp | modulo: 4 %} {% if remain==0 %} {% assign size=b ase | plus: 9 %} {% elsif remain==1 or remain==2 %} {% assign size=b ase | plus: 9 | append: '.5' %} {% else
                         %} {% assign size=b ase | plus: 10 %} {% endif %} {% if remain==0 or remain==1 %} {% assign color=9 | minus: base %} {% else %} {% assign color=8 | minus: base %} {% endif %} <a href="{{ root_url }}/{{ site.tag_dir }}#{{ tag[0] }}"
-                        {% endfor %} </div>
+                        style="font-size: {{ size }}pt; color: #{{ color }}{{ color }}{{ color }};">{{ tag[0] }}</a>
+                        {% endfor %}
                 </div>
+            </div>
 
-                <!-- <div class="side">
+            <!-- <div class="side">
                 <div>
                     <i class="fa fa-external-link"></i>
                     Links
@@ -111,8 +115,8 @@
 
                 </ul>
             </div> -->
-            </div>
         </div>
     </div>
-    <!-- <script src="{{ "/js/scroll.min.js " | prepend: site.baseurl }}" charset="utf-8"></script> -->
-    <!-- <script src="{{ "/js/pageContent.js " | prepend: site.baseurl }}" charset="utf-8"></script> -->
+</div>
+<!-- <script src="{{ "/js/scroll.min.js " | prepend: site.baseurl }}" charset="utf-8"></script> -->
+<!-- <script src="{{ "/js/pageContent.js " | prepend: site.baseurl }}" charset="utf-8"></script> -->
