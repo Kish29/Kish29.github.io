@@ -99,12 +99,10 @@
                     < min %} {% assign min=t ag[1].size %} {% endif %} {% endfor %} {% if max==m in %} {% assign diff=1 %} {% else %} {% assign diff=m ax | minus: min %} {% endif %} {% for tag in site.tags %} {% assign temp=t ag[1].size | minus: min | times: 36 | divided_by:
                         diff %} {% assign base=t emp | divided_by: 4 %} {% assign remain=t emp | modulo: 4 %} {% if remain==0 %} {% assign size=b ase | plus: 9 %} {% elsif remain==1 or remain==2 %} {% assign size=b ase | plus: 9 | append: '.5' %} {% else
                         %} {% assign size=b ase | plus: 10 %} {% endif %} {% if remain==0 or remain==1 %} {% assign color=9 | minus: base %} {% else %} {% assign color=8 | minus: base %} {% endif %} <a href="{{ root_url }}/{{ site.tag_dir }}#{{ tag[0] }}"
-                        style="font-size: {{ size }}pt; color: #{{ color }}{{ color }}{{ color }};">{{ tag[0] }}</a>
-                        {% endfor %}
+                        {% endfor %} </div>
                 </div>
-            </div>
 
-            <!-- <div class="side">
+                <!-- <div class="side">
                 <div>
                     <i class="fa fa-external-link"></i>
                     Links
@@ -113,8 +111,8 @@
 
                 </ul>
             </div> -->
+            </div>
         </div>
     </div>
-</div>
-<!-- <script src="{{ "/js/scroll.min.js " | prepend: site.baseurl }}" charset="utf-8"></script> -->
-<!-- <script src="{{ "/js/pageContent.js " | prepend: site.baseurl }}" charset="utf-8"></script> -->
+    <!-- <script src="{{ "/js/scroll.min.js " | prepend: site.baseurl }}" charset="utf-8"></script> -->
+    <!-- <script src="{{ "/js/pageContent.js " | prepend: site.baseurl }}" charset="utf-8"></script> -->
